@@ -1,0 +1,208 @@
+/* variables */
+$tituloscolor:  tomato;
+$titulo: 45px;
+$oferta: noferta;
+$ancho: 1100px;
+
+html{
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+  }
+
+.badge{
+    @if $oferta == oferta {
+        background-color: red;
+    }
+
+    @else if $oferta == noferta {
+        background-color: blueviolet;
+    }
+}
+
+/*GRID HOME*/
+
+.grid{
+    display: grid;
+    justify-items: stretch;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    /* grid-column-gap: 15px;
+    grid-row-gap: 10px; */
+    /* width: 90%;*/
+}
+
+/*HEADER*/
+.sticky-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#navbarNav{
+    margin-left: 15rem;
+    text-align: right;    
+}
+
+nav.principal ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+    margin-left: 10rem;
+}
+
+a{
+    font-size: 12px;
+    color: black;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.logo{
+    margin-left: 15rem;
+}
+
+/* CUERPO */
+
+.parent {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 150%;
+    align-items: center;
+    }
+    
+    .divslide { 
+    grid-area: 1 / 1 / 2 / 2;
+    
+}
+
+.slide{
+    width: 100%;
+}
+
+.carousel{
+    margin-top: 100px;    
+}
+
+.productos{
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulosecundario{
+    background-color: tomato;
+    color: white;
+    font-size: 25px;
+    width: 150px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+.tituloprincipal{
+    text-align: center;
+    font-size: $titulo;
+    font-style: 700;
+    color:$tituloscolor;
+    padding-bottom: 20px;
+}
+
+
+/* PRODUCTOS */
+
+.card-deck{
+    width: 80%;
+    margin: auto;
+    padding: 15px;
+}
+
+@media screen and (max-width: 1200px) and (orientation: landscape){
+
+    .card-deck{
+        width: $ancho/2;
+        display: inline-block;
+    }
+
+}
+
+@media screen and (max-width: 800px) and (orientation: landscape){
+
+    .card-deck{
+        width: $ancho/3;
+        display: inline-block;
+    }
+
+}
+
+/* FOOTER */
+
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* CONTACTO */
+
+.contactotexto{
+    font-size: 50px;
+    margin-left: 10rem;
+}
+
+.contacto{
+    margin-left: 10rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "form img";
+  }
+  .form { grid-area: form; }
+  .img { grid-area: img; }
+
+/* QUIENES SOMOS */
+
+.quienessomos{
+    align-content: center;
+    text-align: center;
+}
+
+
+/* MEDIA Q */
+
+@media (max-width: 1200px) and (orientation: landscape) {
+    .carousel{
+        margin-top: 80px;
+    }
+
+    .logo {
+      margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .carousel{
+        margin-top: 50px;
+    }
+
+    .logo {
+      margin-left: 0;
+      width: 25%;
+    }
+}
+
